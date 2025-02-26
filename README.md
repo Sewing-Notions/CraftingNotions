@@ -8,6 +8,8 @@ to get the most recent Main branch
 - type 'git pull' to get the most recent update to Main
 - type 'git branch (branch-name)' to create a branch
 
+Create a blank sails app before pulling this
+
 
 # crafting-notions
 
