@@ -1,0 +1,73 @@
+:root {
+    --text-color: black;
+    --background-color: pink;
+    --alt-background-color: rgb(179, 218, 255);
+    --head-color: rgb(179, 218, 255);
+    --foot-color: rgb(179, 218, 255);
+}
+
+.header {background-color: var(--head-color); text-align: center;}
+.body {background-color: var(--background-color);}
+.foot { height: 200px; background-color: var(--foot-color);}
+
+.nav-container {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: auto auto auto auto auto;
+    text-align: center;
+}
+.nav-container>div {
+    padding: 0 10px;
+}
+
+.container-big-promo { padding: 3%; display: grid; grid-template-columns: auto auto; }
+.container-grid {  
+    padding-right: 15px;
+    padding-left: 15px;
+
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.container-fancy-grid {
+    padding-right: 15px;
+    padding-left: 15px;
+
+    display: grid;
+    grid-template-areas: 
+    'item1 item1 item1 item2 item2'
+    'item3 item3 item4 item4 item4'
+    'item5 item5 item5 item6 item6';
+
+}
+.container-fancy-grid>div:nth-child(1) { 
+    background-image: url('../images/premium_photo-1675202428354-31b4d814df9d.avif');
+    background-color: var(--alt-background-color);
+    grid-area: item1; }
+.container-fancy-grid>div:nth-child(2) { 
+    background-image: url('../images/premium_photo-1675202428354-31b4d814df9d.avif');
+    background-color: var(--alt-background-color);
+    grid-area: item2; }
+.container-fancy-grid>div:nth-child(3) { 
+    background-image: url('../images/premium_photo-1675202428354-31b4d814df9d.avif');
+    background-color: var(--alt-background-color);
+    grid-area: item3; }
+.container-fancy-grid>div:nth-child(4) { 
+    background-image: url('../images/premium_photo-1675202428354-31b4d814df9d.avif');
+    background-color: var(--alt-background-color);
+    grid-area: item4; }
+.container-fancy-grid>div:nth-child(5) { 
+    background-image: url('../images/premium_photo-1675202428354-31b4d814df9d.avif');
+    background-color: var(--alt-background-color);
+    grid-area: item5; }
+.container-fancy-grid>div:nth-child(6) { 
+    background-image: url('../images/premium_photo-1675202428354-31b4d814df9d.avif');
+    background-color: var(--alt-background-color);
+    grid-area: item6; }
+
+.navigation img { height: 1em; }
+.fancy-promo-img { height: 200px; margin: 10px; }
+
+.big-promo-img>img { max-width: 100%; padding: 2%; }
+
+.grid-promo-img>img { max-width: 100%; padding: 2%; }
