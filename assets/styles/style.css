@@ -28,7 +28,6 @@
     display: grid;
     grid-template-columns: auto auto auto;
 }
-
 .container-fancy-grid {
     padding-right: 15px;
     padding-left: 15px;
@@ -38,29 +37,28 @@
     'item1 item1 item1 item2 item2'
     'item3 item3 item4 item4 item4'
     'item5 item5 item5 item6 item6';
-
 }
-.container-fancy-grid>div:nth-child(1) { 
+.container-fancy-grid>a:nth-child(1) { 
     background-image: url('../images/premium_photo-1675202428354-31b4d814df9d.avif');
     background-color: var(--alt-background-color);
     grid-area: item1; }
-.container-fancy-grid>div:nth-child(2) { 
+.container-fancy-grid>a:nth-child(2) { 
     background-image: url('../images/premium_photo-1675202428354-31b4d814df9d.avif');
     background-color: var(--alt-background-color);
     grid-area: item2; }
-.container-fancy-grid>div:nth-child(3) { 
+.container-fancy-grid>a:nth-child(3) { 
     background-image: url('../images/premium_photo-1675202428354-31b4d814df9d.avif');
     background-color: var(--alt-background-color);
     grid-area: item3; }
-.container-fancy-grid>div:nth-child(4) { 
+.container-fancy-grid>a:nth-child(4) { 
     background-image: url('../images/premium_photo-1675202428354-31b4d814df9d.avif');
     background-color: var(--alt-background-color);
     grid-area: item4; }
-.container-fancy-grid>div:nth-child(5) { 
+.container-fancy-grid>a:nth-child(5) { 
     background-image: url('../images/premium_photo-1675202428354-31b4d814df9d.avif');
     background-color: var(--alt-background-color);
     grid-area: item5; }
-.container-fancy-grid>div:nth-child(6) { 
+.container-fancy-grid>a:nth-child(6) { 
     background-image: url('../images/premium_photo-1675202428354-31b4d814df9d.avif');
     background-color: var(--alt-background-color);
     grid-area: item6; }
@@ -68,6 +66,31 @@
 .navigation img { height: 1em; }
 .fancy-promo-img { height: 200px; margin: 10px; }
 
-.big-promo-img>img { max-width: 100%; padding: 2%; }
+.big-promo-img img { max-width: 100%; padding: 2%; }
 
-.grid-promo-img>img { max-width: 100%; padding: 2%; }
+.grid-promo-img img { max-width: 100%; padding: 2%; }
+
+.container-product {
+    display: grid;
+    grid-template-columns: auto 50%;
+}
+.product-img {margin: 20px;}
+.product-img>img {
+    max-width: 100%;
+}
+.product-info {
+    margin: 20px;
+    display: grid;
+    grid-template-rows: 10% auto 30%;
+}
+.container-product-info {
+    margin: 20px;
+
+}
+
+.product-choices {
+    background-color: var(--alt-background-color);
+}
+.proj-choices {
+    background-color: var(--alt-background-color);
+}
