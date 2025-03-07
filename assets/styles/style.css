@@ -16,9 +16,7 @@
     grid-template-columns: auto auto auto auto auto;
     text-align: center;
 }
-.nav-container>div {
-    padding: 0 10px;
-}
+.nav-container>div { padding: 0 10px; }
 
 .container-big-promo { padding: 3%; display: grid; grid-template-columns: auto auto; }
 .container-grid {  
@@ -92,5 +90,15 @@
     background-color: var(--alt-background-color);
 }
 .proj-choices {
+    background-color: var(--alt-background-color);
+}
+
+.container-browse {
+    padding-right: 15px;
+    padding-left: 15px;
+    display: grid;
+    grid-template-columns: 20% auto;
+}
+.container-filters {
     background-color: var(--alt-background-color);
 }
