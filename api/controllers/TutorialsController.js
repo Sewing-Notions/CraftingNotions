@@ -3,8 +3,8 @@ const axios = require('axios');
 module.exports = {
   async getYouTubeVideos(req, res) {
     try {
-      const { query } = req.query; // Get search keyword from request
-      const YOUTUBE_API_KEY = 'AIzaSyDd6yaL5a_HAEks39Ic7pLlj7mIaSl_jkk'; // Replace with your YouTube API key
+      const { query } = req.query; 
+     
 
       const response = await axios.get(
         `https://www.googleapis.com/youtube/v3/search`, {
