@@ -21,8 +21,7 @@ module.exports.routes = {
 
   '/': { view: 'pages/homepage' },
   '/tutorials': { view: 'pages/tutorials' },
-  '/products': { view: 'pages/products' },
-'GET /api/tutorials/youtube': 'TutorialsController.getYouTubeVideos',
+  
   /***************************************************************************
   *                                                                          *
   * More custom routes here...                                               *
