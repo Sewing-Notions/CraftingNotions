@@ -21,6 +21,7 @@ module.exports.routes = {
 
   '/': { view: 'pages/homepage' },
   '/tutorials': { view: 'pages/tutorials' },
+  '/product': { view: 'pages/product' },
   
   /***************************************************************************
   *                                                                          *
