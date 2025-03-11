@@ -20,11 +20,17 @@ module.exports.routes = {
   ***************************************************************************/
 
   '/': { view: 'pages/homepage' },
+<<<<<<< HEAD
   '/tutorials': { view: 'pages/browse' },
   '/products': { view: 'pages/browse' },
   '/product': { view: 'pages/product' },
 
 
+=======
+  '/tutorials': { view: 'pages/tutorials' },
+  '/product': { view: 'pages/product' },
+  
+>>>>>>> origin/main
   /***************************************************************************
   *                                                                          *
   * More custom routes here...                                               *
@@ -38,3 +44,4 @@ module.exports.routes = {
 
 
 };
+

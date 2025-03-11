@@ -1,0 +1,64 @@
+<%- partial('../partials/header') %>
+<%- partial('../partials/navbar') %>
+<h1>Search for Tutorials</h1>
+<div class="main-container">
+
+   
+  <div class="search-section">
+    
+
+    <label for="categorySelect">Choose a category:</label>
+    <select id="categorySelect">
+      <option value="crochet">Crocheting</option>
+      <option value="tapestry">Tapestry</option>
+      <option value="embroidery">Embroidery</option>
+      <option value="knitting">Knitting</option>
+      <option value="art">Art</option>
+    </select>
+
+    <input type="text" id="searchQuery" placeholder="Search for a tutorial">
+    <button onclick="searchTutorials()">Search</button>
+  </div>
+
+  <div id="videosContainer" class="video-section"></div>
+</div>
+
+<script>
+  async function searchTutorials() {
+    const query = document.getElementById("searchQuery").value.trim(); 
+    const selectedCategory = document.getElementById("categorySelect").value; 
+
+    if (query) {
+    
+      const fullQuery = `${query} tutorial ${selectedCategory}`;
+
+      const apiUrl = `/api/tutorials/youtube?query=${fullQuery}`;
+
+      try {
+        const response = await fetch(apiUrl);
+        const data = await response.json();
+
+        if (data.error) {
+          alert(data.error); 
+          return;
+        }
+
+        const videosContainer = document.getElementById("videosContainer");
+        videosContainer.innerHTML = ''; 
+
+        data.forEach((video) => {
+          const videoElement = document.createElement('div');
+          videoElement.innerHTML = `
+            <h3>${video.snippet.title}</h3>
+            <img src="${video.snippet.thumbnails.high.url}" alt="${video.snippet.title}">
+            
+            <a href="https://www.youtube.com/watch?v=${video.id.videoId}" target="_blank">Watch</a>
+          `;
+          videosContainer.appendChild(videoElement);
+        });
+      } catch (error) {
+        console.error('Error fetching YouTube videos:', error);
+      }
+    }
+  }
+</script>
