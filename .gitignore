@@ -132,13 +132,3 @@ lib-cov
 *.out
 *.pid
 
-.editorconfig
-.eslintignore
-.eslintrc
-.npmrc
-.sailsrc
-app.js
-Gruntfile.js
-package.json
-package-lock.json
-

@@ -1,16 +1,3 @@
-getting the project on your workspace
-- using Cmder, cd to the location you will work from on your pc
-- type 'git clone https://github.com/Sewing-Notions/CraftingNotions.git'
-
-to get the most recent Main branch
-- using Cmder, cd to the location you will work from on your pc
-- type 'git status' to check if you have any files that are changed but not committed
-- type 'git pull' to get the most recent update to Main
-- type 'git branch (branch-name)' to create a branch
-
-Create a blank sails app before pulling this
-
-
 # crafting-notions
 
 a [Sails v1](https://sailsjs.com) application
@@ -27,7 +14,7 @@ a [Sails v1](https://sailsjs.com) application
 
 ### Version info
 
-This app was originally generated on Tue Feb 25 2025 16:18:03 GMT-0800 (Pacific Standard Time) using Sails v1.5.14.
+This app was originally generated on Tue Mar 11 2025 17:08:28 GMT-0700 (Pacific Daylight Time) using Sails v1.5.14.
 
 <!-- Internally, Sails used [`sails-generate@2.0.13`](https://github.com/balderdashy/sails-generate/tree/v2.0.13/lib/core-generators/new). -->
 
