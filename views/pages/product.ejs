@@ -8,8 +8,8 @@
         <img src="..\images\premium_photo-1675202428354-31b4d814df9d.avif"> 
       </div>
       <div class="product-info">
-        <p id="product-name"></p>
-        <p>Product info</p>
+        <p id="product-name"><%= productName %></p>
+        <p><%= productInfo %></p>
 
         <div class="product-choices">
 
@@ -21,14 +21,7 @@
         <p>Further Product Details</p>
         <div class="prod-info">
           <p>
-            test<br>
-            test<br>
-            test<br>
-            test<br>
-            test<br>
-            test<br>
-            test<br>
-            test
+            <%= productInfo %>
           </p>
         </div>
       </div>
@@ -40,5 +33,4 @@
     </div>
   </div>
   <%- partial('../partials/footer') %>
-  <script src="./js/product.js"></script>
 </div>

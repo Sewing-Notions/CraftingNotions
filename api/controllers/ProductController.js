@@ -6,10 +6,8 @@
  */
 
 module.exports = {
-  
-    test: function (req, res) {
-        return res.view('pages/product');
+    product: function (req, res) {
+        return res.view('pages/product', {productName: Product.findProduct(req), productInfo: req.param('pid')});
     }
-
 };
 

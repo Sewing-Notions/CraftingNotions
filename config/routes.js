@@ -20,7 +20,7 @@ module.exports.routes = {
   ***************************************************************************/
 
   '/': { view: 'pages/homepage' },
-  '/tutorials': { view: 'pages/browse' },
+  '/tutorials': { view: 'pages/tutorials' },
   '/products': { view: 'pages/browse' },
 
 
@@ -37,7 +37,7 @@ module.exports.routes = {
 
   'get /product/:pid': {
     controller: 'ProductController',
-    action: 'test',
+    action: 'product',
     skipAssets: true
   }
 };
