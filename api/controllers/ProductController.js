@@ -4,10 +4,10 @@
  * @description :: Server-side actions for handling incoming requests.
  * @help        :: See https://sailsjs.com/docs/concepts/actions
  */
+const jsonfile = require('jsonfile');
 
 module.exports = {
     getProduct: function (req, res) {
-        const jsonfile = require('jsonfile');
         var file = './assets/json/products.json';
 
         jsonfile.readFile(file, function(err, obj) {
@@ -26,11 +26,30 @@ module.exports = {
             });
 
             return res.view('pages/product', {productName: pName, productInfo: pInfo});
-        })
+        });
     },
 
-    product: function (req, res) {
-        return res.view('pages/product', {productName: Product.findProduct(req), productInfo: req.param('pid')});
-    } 
+    getProducts: function (req, res) {
+        var file = './assets/json/products.json';
+
+        jsonfile.readFile(file, function(err, obj) {
+            if (err) {
+                res.json({err: err});
+            }
+            console.dir(obj);
+            var prods = ``;
+
+            obj.forEach(function(prod) {
+                prods += `
+                <div class="product-thumnail">
+                <h3>${prod.pName}</h3>
+                <img src="${prod.image}" alt="${prod.pName}">
+                <a href="/product/${prod.pid}">Buy Now</a>  <a href="">Add to Cart</a>
+                </div>`;
+            });
+
+            return res.view('pages/browse', {products: prods});
+        });
+    }
 };
 

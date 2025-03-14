@@ -3,12 +3,21 @@
         "pid": 1,
         "pName": "fabric",
         "price": "1.50",
-        "discription": "soft"
+        "discription": "soft",
+        "image": "../images/premium_photo-1675202428354-31b4d814df9d.avif"
     },
     {
         "pid": 2,
         "pName": "thread",
         "price": "1.50",
-        "discription": "long"
+        "discription": "long",
+        "image": "../images/threads.jpg"
+    },
+    {
+        "pid": 3,
+        "pName": "felt",
+        "price": "1.50",
+        "discription": "colorful",
+        "image": "../images/felt.jpg"
     }
 ]
