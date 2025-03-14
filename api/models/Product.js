@@ -12,17 +12,6 @@ module.exports = {
     pName: { type: 'string', required: true},
     price: { type: 'float'},
     discription: { type: 'string'}
-  },
-
-
-  findProduct: async function (opts) {
-    /*var product = await Products.find({ pid: opts });
-
-    if (!product) {
-      throw require('flaverr') ({
-        message: `Cannot find product with id=${opts.id}`
-      })
-    } */
   }
 };
 

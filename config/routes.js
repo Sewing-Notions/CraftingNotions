@@ -37,7 +37,7 @@ module.exports.routes = {
 
   'get /product/:pid': {
     controller: 'ProductController',
-    action: 'product',
+    action: 'getProduct',
     skipAssets: true
   }
 };

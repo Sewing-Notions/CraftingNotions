@@ -1,12 +1,12 @@
 [
     {
-        "pid": "0000000001",
+        "pid": 1,
         "pName": "fabric",
         "price": "1.50",
         "discription": "soft"
     },
     {
-        "pid": "0000000002",
+        "pid": 2,
         "pName": "thread",
         "price": "1.50",
         "discription": "long"
