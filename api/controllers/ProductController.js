@@ -18,14 +18,16 @@ module.exports = {
 
             var pName = 'does not exist';
             var pInfo = 'does not exist';
+            var pImg = ``;
 
             obj.forEach(function(prod) { 
                 if (prod.pid == req.param('pid')) {
                     pName = prod.pName; pInfo = prod.discription;
+                    pImg += `<img src="${prod.image}" alt="${prod.pName}">`;
                 }
             });
 
-            return res.view('pages/product', {productName: pName, productInfo: pInfo});
+            return res.view('pages/product', {productName: pName, productInfo: pInfo, productImage: pImg});
         });
     },
 
