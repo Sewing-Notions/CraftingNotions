@@ -6,7 +6,6 @@ module.exports = {
     try {
       const { query, category } = req.query;
 
-      // Fetch YouTube Videos
       const YOUTUBE_API_KEY = process.env.YOUTUBE_API_KEY;
       const youtubeResponse = await axios.get('https://www.googleapis.com/youtube/v3/search', {
         params: {
@@ -17,8 +16,6 @@ module.exports = {
           key: YOUTUBE_API_KEY
         }
       });
-
-      // Fetch WordPress Tutorials based on category (Crochet or Tapestry)
       let wordpressSites = [];
       if (category === 'crochet') {
         wordpressSites = [
@@ -70,20 +67,19 @@ module.exports = {
       console.log(`📝 Using WordPress sites: ${wordpressSites.join(', ')}`);
       const wordpressPromises = wordpressSites.map(site =>
         axios.get(`${site}/wp-json/wp/v2/posts`, {
-          params: { search: query, per_page: 5 } // Fetch max 5 results per site
+          params: { search: query, per_page: 5 } 
         }).then(response => ({
           site,
           tutorials: response.data.map(post => ({
             title: post.title.rendered,
             link: post.link,
-            thumbnail: post.jetpack_featured_media_url || null // Some sites have images
+            thumbnail: post.jetpack_featured_media_url || null 
           }))
-        })).catch(() => null) // Ignore failed requests
+        })).catch(() => null) 
       );
 
       const wordpressResults = (await Promise.all(wordpressPromises)).filter(result => result);
 
-      // Craftsy tutorial link (no API available)
       const craftsySearchUrl = `https://www.craftsy.com/search?q=${encodeURIComponent(query)}&category=all`;
 
       return res.json({

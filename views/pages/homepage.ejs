@@ -7,12 +7,12 @@
       <div class="big-promo-img">
         <h2>Fabric with a large pattern</h2>
         <img src="images\photo-1552710307-537199cd41c0.avif" class="imgShopNow">
-        <button class="shopNow">Shop Now</button>
+        <<button class="shopNow" onclick="shopNow('fabric')">Shop Now</button>
       </div>
       <div class="big-promo-img">
         <h2>Fabric with a small pattern</h2>
         <img src="images\premium_photo-1675202428354-31b4d814df9d.avif" class="imgShopNow">
-        <button class="shopNow">Shop Now</button>
+        <button class="shopNow"  onclick="shopNow('fabric')">Shop Now</button>
       </div>
     </div>
     <div class="container-grid">
@@ -56,5 +56,10 @@
 
 
   </div>
+  <script>
+    function shopNow(category) {
+    window.location.href = `/products?category=${category}`;
+}
+  </script>
   <%- partial('../partials/footer') %>
 </div>

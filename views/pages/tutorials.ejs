@@ -33,7 +33,6 @@
   const fullQuery = `${query} tutorial ${selectedCategory}`;
   const apiUrl = `/api/tutorials?query=${fullQuery}&category=${selectedCategory}`;
 
-  // ✅ Show the loading indicator
   document.getElementById("loadingIndicator").style.display = "block";
 
   try {
@@ -44,13 +43,10 @@
       alert(data.error);
       return;
     }
-
-    // ✅ Clear previous results
     document.getElementById("videosContainer").innerHTML = '';
     document.getElementById("wordpressContainer").innerHTML = '';
     document.getElementById("craftsyContainer").innerHTML = '';
 
-    // ✅ Display YouTube videos
     const videosContainer = document.getElementById("videosContainer");
     if (data.youtube.length > 0) {
       data.youtube.forEach((video) => {
@@ -64,7 +60,6 @@
       });
     }
 
-    // ✅ Display WordPress tutorials
     const wordpressContainer = document.getElementById("wordpressContainer");
     if (data.wordpress.length > 0) {
       data.wordpress.forEach((site) => {
@@ -87,7 +82,6 @@
       });
     }
 
-    // ✅ Display Craftsy search link
     const craftsyContainer = document.getElementById("craftsyContainer");
     craftsyContainer.innerHTML = `
       <h2>More Tutorials</h2>
@@ -97,7 +91,7 @@
   } catch (error) {
     console.error("Error fetching tutorials:", error);
   } finally {
-    // ✅ Hide the loading indicator after fetching data
+    
     document.getElementById("loadingIndicator").style.display = "none";
   }
 }

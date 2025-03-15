@@ -1,14 +1,92 @@
 [
     {
         "pid": "0000000001",
-        "pName": "fabric",
-        "price": "1.50",
-        "discription": "soft"
+        "pName": "Small Floral Fabric",
+        "price": "9.00",
+        "description": "Soft cotton fabric with small floral pattern",
+        "size": "small",
+        "category": "fabric",
+        "image": "https://www.midlandtextiles.co.uk/cdn/shop/files/57_d0edcda3-f31f-4110-916e-09bc4b4504d6.jpg?v=1739188055&width=1024"
     },
     {
         "pid": "0000000002",
-        "pName": "thread",
-        "price": "1.50",
-        "discription": "long"
+        "pName": "Small Geometric Fabric",
+        "price": "1.80",
+        "description": "Durable polyester fabric with small geometric pattern",
+        "size": "small",
+        "category": "fabric",
+        "image": "https://www.totofabrics.com/cdn/shop/products/IMG_4227_600x600_721f4d34-c006-489d-902f-6e5a5fa36483_large.JPG?v=1548303350"
+    },
+    {
+        "pid": "0000000003",
+        "pName": "Small Dots Fabric",
+        "price": "2.20",
+        "description": "Premium silk fabric with small dots pattern",
+        "size": "small",
+        "category": "fabric",
+        "image": "https://rexfabrics.us/cdn/shop/products/3110_large.jpg?v=1671077003"
+    },
+    {
+        "pid": "0000000004",
+        "pName": "Small Striped Fabric",
+        "price": "1.90",
+        "description": "Soft fabric with thin striped pattern",
+        "size": "small",
+        "category": "fabric",
+        "image": "https://www.stylerevolutionary.com/wp-content/uploads/2023/03/small-stripe-sky-indigo-indoor-outdoor-alex-conroy-style-revolutionary-scaled.jpg"
+    },
+    {
+        "pid": "0000000005",
+        "pName": "Small Abstract Fabric",
+        "price": "2.50",
+        "description": "Artistic abstract fabric with soft texture",
+        "size": "small",
+        "category": "fabric",
+        "image": "https://truettdesigns.com/cdn/shop/files/geometric-navy-and-sage-small-repeat-fabric-truett-designs-2-32415528616192.jpg?v=1706220762"
+    },
+    {
+        "pid": "0000000006",
+        "pName": "Big Floral Fabric",
+        "price": "3.00",
+        "description": "Soft cotton fabric with large floral pattern",
+        "size": "big",
+        "category": "fabric",
+        "image": "https://cdn11.bigcommerce.com/s-2e6e1/images/stencil/1280x1280/products/21544/38382/Fabric_24099__33327.1655505727.jpg?c=2"
+    },
+    {
+        "pid": "0000000007",
+        "pName": "Big Geometric Fabric",
+        "price": "2.80",
+        "description": "Durable polyester fabric with large geometric pattern",
+        "size": "big",
+        "category": "fabric",
+        "image": "https://www.totofabrics.com/cdn/shop/products/compass_onyx_grande.jpg?v=1533195011"
+    },
+    {
+        "pid": "0000000008",
+        "pName": "Big Dots Fabric",
+        "price": "3.20",
+        "description": "Premium silk fabric with big dots pattern",
+        "size": "big",
+        "category": "fabric",
+        "image": "https://i.etsystatic.com/36896877/r/il/81a210/4101302914/il_300x300.4101302914_j6af.jpg"
+    },
+    {
+        "pid": "0000000009",
+        "pName": "Big Striped Fabric",
+        "price": "2.90",
+        "description": "Soft fabric with wide striped pattern",
+        "size": "big",
+        "category": "fabric",
+        "image": "https://corefabricstore.com/cdn/shop/files/F-COT195-Wide-Stripe-Recycled-Cotton-Black-and-Cream-Core-Fabrics-fold_2048x.jpg?v=1694189124"
+    },
+    {
+        "pid": "0000000010",
+        "pName": "Big Abstract Fabric",
+        "price": "3.50",
+        "description": "Artistic abstract fabric with large shapes",
+        "size": "big",
+        "category": "fabric",
+        "image": "https://i.etsystatic.com/34695701/r/il/c58a8b/4103067362/il_570xN.4103067362_8gdn.jpg"
     }
 ]
