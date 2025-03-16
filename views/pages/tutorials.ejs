@@ -1,12 +1,10 @@
 <%- partial('../partials/header') %>
 <%- partial('../partials/navbar') %>
+
 <h1>Search for Tutorials</h1>
+
 <div class="main-container">
-
-   
   <div class="search-section">
-    
-
     <label for="categorySelect">Choose a category:</label>
     <select id="categorySelect">
       <option value="crochet">Crocheting</option>
@@ -15,50 +13,86 @@
       <option value="knitting">Knitting</option>
       <option value="art">Art</option>
     </select>
-
     <input type="text" id="searchQuery" placeholder="Search for a tutorial">
     <button onclick="searchTutorials()">Search</button>
+    <div id="loadingIndicator" style="display: none; text-align: center;">
+      <p>Loading tutorials...</p>
+      <img src="/images/pendulum.gif" alt="Loading..." width="110">
+    </div>
   </div>
 
   <div id="videosContainer" class="video-section"></div>
+  <div id="wordpressContainer" class="wordpress-section"></div>
+  <div id="craftsyContainer" class="craftsy-section"></div>
 </div>
 
 <script>
-  async function searchTutorials() {
-    const query = document.getElementById("searchQuery").value.trim(); 
-    const selectedCategory = document.getElementById("categorySelect").value; 
+ async function searchTutorials() {
+  const query = document.getElementById("searchQuery").value.trim();
+  const selectedCategory = document.getElementById("categorySelect").value;
+  const fullQuery = `${query} tutorial ${selectedCategory}`;
+  const apiUrl = `/api/tutorials?query=${fullQuery}&category=${selectedCategory}`;
 
-    if (query) {
-    
-      const fullQuery = `${query} tutorial ${selectedCategory}`;
+  document.getElementById("loadingIndicator").style.display = "block";
 
-      const apiUrl = `/api/tutorials/youtube?query=${fullQuery}`;
+  try {
+    const response = await fetch(apiUrl);
+    const data = await response.json();
 
-      try {
-        const response = await fetch(apiUrl);
-        const data = await response.json();
-
-        if (data.error) {
-          alert(data.error); 
-          return;
-        }
-
-        const videosContainer = document.getElementById("videosContainer");
-        videosContainer.innerHTML = ''; 
-
-        data.forEach((video) => {
-          const videoElement = document.createElement('div');
-          videoElement.innerHTML = `
-            <h3>${video.snippet.title}</h3>
-            <img src="${video.snippet.thumbnails.high.url}" alt="${video.snippet.title}">
-            
-            <a href="https://www.youtube.com/watch?v=${video.id.videoId}" target="_blank">Watch</a>
-          `;
-          videosContainer.appendChild(videoElement);
-        });
-      } catch (error) {
-        console.error('Error fetching YouTube videos:', error);
-      }
+    if (data.error) {
+      alert(data.error);
+      return;
     }
+    document.getElementById("videosContainer").innerHTML = '';
+    document.getElementById("wordpressContainer").innerHTML = '';
+    document.getElementById("craftsyContainer").innerHTML = '';
+
+    const videosContainer = document.getElementById("videosContainer");
+    if (data.youtube.length > 0) {
+      data.youtube.forEach((video) => {
+        const videoElement = document.createElement('div');
+        videoElement.innerHTML = `
+          <h3>${video.snippet.title}</h3>
+          <img src="${video.snippet.thumbnails.high.url}" alt="${video.snippet.title}">
+          <a href="https://www.youtube.com/watch?v=${video.id.videoId}" target="_blank">Watch</a>
+        `;
+        videosContainer.appendChild(videoElement);
+      });
+    }
+
+    const wordpressContainer = document.getElementById("wordpressContainer");
+    if (data.wordpress.length > 0) {
+      data.wordpress.forEach((site) => {
+        if (site && site.site) {
+          const siteUrl = new URL(site.site);
+          const siteSection = document.createElement('div');
+          siteSection.innerHTML = `<h3>From <a href="${site.site}" target="_blank">${siteUrl.hostname}</a></h3>`;
+
+          site.tutorials.forEach((post) => {
+            const postElement = document.createElement('div');
+            postElement.innerHTML = `
+              <h4><a href="${post.link}" target="_blank">${post.title}</a></h4>
+              ${post.thumbnail ? `<img src="${post.thumbnail}" alt="${post.title}" width="200">` : ''}
+            `;
+            siteSection.appendChild(postElement);
+          });
+
+          wordpressContainer.appendChild(siteSection);
+        }
+      });
+    }
+
+    const craftsyContainer = document.getElementById("craftsyContainer");
+    craftsyContainer.innerHTML = `
+      <h2>More Tutorials</h2>
+      <p>Check out more tutorials on <a href="${data.craftsy}" target="_blank">Craftsy</a></p>
+    `;
+
+  } catch (error) {
+    console.error("Error fetching tutorials:", error);
+  } finally {
+    
+    document.getElementById("loadingIndicator").style.display = "none";
   }
+}
 </script>

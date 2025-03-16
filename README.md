@@ -9,6 +9,8 @@ to get the most recent Main branch
 - type 'git branch (branch-name)' to create a branch
 
 Create a blank sails app before pulling this
+axios package is required for this to function correctly
+dotenv is required for this to function correctly
 
 
 # crafting-notions

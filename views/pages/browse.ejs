@@ -1,0 +1,45 @@
+<div class="container-fluid body">
+  <%- partial('../partials/header.ejs') %>
+  <%- partial('../partials/navbar.ejs') %>
+
+  <div class="web-body">
+    <div class="container-browse">
+      <div class="container-filters">
+        <form id="browse-filters">
+          <fieldset>
+            <legend>Filters</legend>
+            <p>Pattern Size</p>
+            <select id="filter">
+              <option value="all">All</option>
+              <option value="small">Small Patterns</option>
+              <option value="big">Big Patterns</option>
+            </select>
+          </fieldset>
+        </form>
+      </div>
+      <div class="container-content">
+        <div class="browse-thumnail-container">
+          <%- products %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%- partial('../partials/footer.ejs') %>
+</div>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const filterDropdown = document.getElementById("filter");
+    const filter = new URLSearchParams(window.location.search);
+    filterDropdown.value = filter.get("size") || "all";
+    
+    filterDropdown.addEventListener("change", function() {
+      const selectedSize = filterDropdown.value;
+      if (selectedSize === "all") {
+        window.location = window.location.href.split("?")[0];
+      } else {
+        var url = window.location.href.split("?")[0];
+        window.location = url + "?size=" + filterDropdown.value;
+      }
+    })
+  })
+</script>

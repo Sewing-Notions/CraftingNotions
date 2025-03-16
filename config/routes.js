@@ -34,6 +34,15 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-
+  'get /product/:pid': {
+    controller: 'ProductController',
+    action: 'getProduct',
+    skipAssets: true
+  },
+  'get /products/': {
+    controller: 'ProductController',
+    action: 'getProducts',
+    skipAssets: true
+  }
 };
 
