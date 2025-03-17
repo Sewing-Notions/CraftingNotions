@@ -16,6 +16,7 @@ function addToCart() {
                 if (selectedProduct != undefined) {
                     cart.push(selectedProduct);
                     sessionStorage.setItem('cart', JSON.stringify(cart));
+                    location.reload();
                 }
                 else document.getElementById("product-info").innerHTML = `<p>Product not found.</p>`;
             }
@@ -28,8 +29,6 @@ function addToCart() {
 
     // Store the updated cart back in session storage
     sessionStorage.setItem('cart', JSON.stringify(cart));*/
-
-    displayCart();
 }
 
 // Function to display the selected product information
