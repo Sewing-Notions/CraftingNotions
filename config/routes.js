@@ -23,6 +23,7 @@ module.exports.routes = {
   '/tutorials': { view: 'pages/tutorials' },
   '/product': { view: 'pages/product' },
   '/cart': { view: 'pages/cart'},
+  'GET /api/tutorials': 'TutorialsController.getTutorials',
   
   /***************************************************************************
   *                                                                          *
