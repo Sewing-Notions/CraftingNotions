@@ -8,8 +8,12 @@
         <form id="browse-filters">
           <fieldset>
             <legend>Filters</legend>
-            <input type="checkbox" id="test" name="test" value="test" />
-            <label for="test"> Test filter</label>
+            <p>Pattern Size</p>
+            <select id="filter">
+              <option value="all">All</option>
+              <option value="small">Small Patterns</option>
+              <option value="big">Big Patterns</option>
+            </select>
           </fieldset>
         </form>
       </div>
@@ -22,3 +26,20 @@
   </div>
   <%- partial('../partials/footer.ejs') %>
 </div>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const filterDropdown = document.getElementById("filter");
+    const filter = new URLSearchParams(window.location.search);
+    filterDropdown.value = filter.get("size") || "all";
+    
+    filterDropdown.addEventListener("change", function() {
+      const selectedSize = filterDropdown.value;
+      if (selectedSize === "all") {
+        window.location = window.location.href.split("?")[0];
+      } else {
+        var url = window.location.href.split("?")[0];
+        window.location = url + "?size=" + filterDropdown.value;
+      }
+    })
+  })
+</script>

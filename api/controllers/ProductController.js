@@ -13,7 +13,7 @@ module.exports = {
         jsonfile.readFile(file, function(err, obj) {
             if (err) {
                 res.json({err: err});
-            }            
+            }
             console.dir(obj);
 
             var pName = 'does not exist';
@@ -22,7 +22,8 @@ module.exports = {
 
             obj.forEach(function(prod) { 
                 if (prod.pid == req.param('pid')) {
-                    pName = prod.pName; pInfo = prod.discription;
+                    pName = prod.pName; 
+                    pInfo = `$${prod.price}<br>${prod.description}`;
                     pImg += `<img src="${prod.image}" alt="${prod.pName}">`;
                 }
             });
@@ -31,7 +32,7 @@ module.exports = {
         });
     },
 
-    getProducts: function (req, res) {
+    getProducts: function (req, res) { //${req.param('size')}
         var file = './assets/json/products.json';
 
         jsonfile.readFile(file, function(err, obj) {
@@ -42,12 +43,17 @@ module.exports = {
             var prods = ``;
 
             obj.forEach(function(prod) {
-                prods += `
-                <div class="product-thumnail">
-                <h3>${prod.pName}</h3>
-                <img src="${prod.image}" alt="${prod.pName}">
-                <a href="/product/${prod.pid}">Buy Now</a>  <a href="">Add to Cart</a>
-                </div>`;
+                if (req.param('size') === prod.size || req.param('size') == undefined) {
+                    prods += `
+                    <div class="product-card">
+                    <h2>${prod.pName}</h2>
+                    <img src="${prod.image}" alt="${prod.pName}">                
+                    <p>${prod.description}</p>
+                    <p>Price: $${prod.price}</p>
+                    <button onclick="location.href='/product/${prod.pid}'">View Details</button>
+                    <button onclick="">Add to Cart</button>
+                    </div>`;
+                }
             });
 
             return res.view('pages/browse', {products: prods});

@@ -21,9 +21,9 @@ module.exports.routes = {
 
   '/': { view: 'pages/homepage' },
   '/tutorials': { view: 'pages/tutorials' },
-  //'/products': { view: 'pages/browse' },
-
-
+  '/product': { view: 'pages/product' },
+  '/cart': { view: 'pages/cart'},
+  
   /***************************************************************************
   *                                                                          *
   * More custom routes here...                                               *
@@ -40,7 +40,7 @@ module.exports.routes = {
     action: 'getProduct',
     skipAssets: true
   },
-  'get /products/:category?': {
+  'get /products/': {
     controller: 'ProductController',
     action: 'getProducts',
     skipAssets: true

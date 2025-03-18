@@ -10,7 +10,7 @@ module.exports = {
   attributes: {
     pid: { type: 'string', required: true},
     pName: { type: 'string', required: true},
-    price: { type: 'float'},
+    price: { type: 'number'},
     discription: { type: 'string'}
   }
 };
