@@ -18,17 +18,19 @@ module.exports = {
 
             var pName = 'does not exist';
             var pInfo = 'does not exist';
+            var pPurchase = '';
             var pImg = ``;
 
             obj.forEach(function(prod) { 
                 if (prod.pid == req.param('pid')) {
                     pName = prod.pName; 
-                    pInfo = `$${prod.price}<br>${prod.description}`;
+                    pPurchase = `$${prod.price}<br><button class="btn-toCart" onclick="quickAddToCart(${prod.pid})">Add to Cart</button>`;
+                    pInfo = `${prod.description}`;
                     pImg += `<img src="${prod.image}" alt="${prod.pName}">`;
                 }
             });
 
-            return res.view('pages/product', {productName: pName, productInfo: pInfo, productImage: pImg});
+            return res.view('pages/product', {productName: pName, purchase: pPurchase, productInfo: pInfo, productImage: pImg});
         });
     },
 
@@ -51,7 +53,7 @@ module.exports = {
                     <p>${prod.description}</p>
                     <p>Price: $${prod.price}</p>
                     <button onclick="location.href='/product/${prod.pid}'">View Details</button>
-                    <button onclick="">Add to Cart</button>
+                    <button onclick="quickAddToCart(${prod.pid})">Add to Cart</button>
                     </div>`;
                 }
             });
