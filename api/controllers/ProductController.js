@@ -45,21 +45,43 @@ module.exports = {
             var prods = ``;
 
             obj.forEach(function(prod) {
-                if (req.param('size') === prod.size || req.param('size') == undefined) {
-                    prods += `
-                    <div class="product-card">
-                    <h2>${prod.pName}</h2>
-                    <img src="${prod.image}" alt="${prod.pName}">                
-                    <p>${prod.description}</p>
-                    <p>Price: $${prod.price}</p>
-                    <button onclick="location.href='/product/${prod.pid}'">View Details</button>
-                    <button onclick="quickAddToCart(${prod.pid})">Add to Cart</button>
-                    </div>`;
+                if (prod.pName.toLowerCase().includes(req.param('search')) || prod.description.toLowerCase().includes(req.param('search')) || req.param('search') == undefined) {
+                    if (req.param('size') === prod.size || req.param('size') == undefined) {
+                        prods += `
+                        <div class="product-card">
+                        <h2>${prod.pName}</h2>
+                        <img src="${prod.image}" alt="${prod.pName}">                
+                        <p>${prod.description}</p>
+                        <p>Price: $${prod.price}</p>
+                        <button onclick="location.href='/product/${prod.pid}'">View Details</button>
+                        <button onclick="quickAddToCart(${prod.pid})">Add to Cart</button>
+                        </div>`;
+                    }                    
                 }
             });
 
             return res.view('pages/browse', {products: prods});
         });
-    }
+    }/*,
+
+    searchProducts: function (req, res) {
+        var file = './assets/json/products.json';
+
+        jsonfile.readFile(file, function(err, obj) {
+            if (err) {
+                res.json({err: err});
+            }
+            console.dir(obj);
+            var prods = ``;
+
+            obj.forEach(function(prod) {
+                if (prod.name.includes(req.param('search'))) {
+                    prods += `
+                    ${prod.pName}`;
+                }
+            });
+            return res.view('pages/browse', {products: prods});
+        })
+    }*/
 };
 

@@ -7,6 +7,8 @@
       <div class="container-filters">
         <form id="browse-filters">
           <fieldset>
+            <legend>Search</legend>
+            <input type="text" id="search" name="search">
             <legend>Filters</legend>
             <p>Pattern Size</p>
             <select id="filter">
@@ -29,8 +31,11 @@
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     const filterDropdown = document.getElementById("filter");
+    const filterSearch = document.getElementById("search");
+
     const filter = new URLSearchParams(window.location.search);
     filterDropdown.value = filter.get("size") || "all";
+    filterSearch.value = filter.get("search") || "";
     
     filterDropdown.addEventListener("change", function() {
       const selectedSize = filterDropdown.value;
@@ -40,6 +45,6 @@
         var url = window.location.href.split("?")[0];
         window.location = url + "?size=" + filterDropdown.value;
       }
-    })
+    });
   })
 </script>
