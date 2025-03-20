@@ -24,6 +24,9 @@ module.exports.routes = {
   '/product': { view: 'pages/product' },
   '/cart': { view: 'pages/cart'},
   'GET /api/tutorials': 'TutorialsController.getTutorials',
+  'GET /peta-Portfolio': 'RedirectController.peta',
+  'GET /kat-Portfolio': 'RedirectController.kat',
+  'GET /sasha-Portfolio': 'RedirectController.sasha',
   
   /***************************************************************************
   *                                                                          *
