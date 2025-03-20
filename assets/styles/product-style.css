@@ -36,3 +36,12 @@
 #browse-filters {
     padding: 25px;
 }
+.btn-toCart {
+    background-color: #e65c50;  
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
