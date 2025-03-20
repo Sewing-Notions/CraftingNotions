@@ -9,18 +9,27 @@
  * https://sailsjs.com/config/http
  */
 
+// config/http.js for application on port 1338
 module.exports.http = {
-
-  /****************************************************************************
-  *                                                                           *
-  * Sails/Express middleware to run for every HTTP request.                   *
-  * (Only applies to HTTP requests -- not virtual WebSocket requests.)        *
-  *                                                                           *
-  * https://sailsjs.com/documentation/concepts/middleware                     *
-  *                                                                           *
-  ****************************************************************************/
-
   middleware: {
+    order: [
+      'cookieParser',
+      'session',
+      'bodyParser',
+      'compress',
+      'poweredBy',
+      'router',
+      'www',
+      'favicon',
+      'cors' // Add CORS middleware
+    ],
+    cors: require('cors')({
+      origin: '*', // Allow all origins for testing
+      credentials: true
+    })
+  }
+};
+
 
     /***************************************************************************
     *                                                                          *
@@ -55,6 +64,4 @@ module.exports.http = {
     //   return middlewareFn;
     // })(),
 
-  },
 
-};
