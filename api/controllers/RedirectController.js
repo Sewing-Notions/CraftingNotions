@@ -6,6 +6,6 @@ module.exports = {
     return res.redirect('http://kwest.hopto.org/');
   },
   sasha: function(req, res) {
-    return res.redirect('http://kwest.hopto.org/');
+    return res.redirect('http://skvortsova.servehttp.com/');
   }
 };
