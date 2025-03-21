@@ -12,11 +12,13 @@ module.exports.routes = {
   'GET /': { view: 'pages/homepage' },
   'GET /home': { view: 'pages/homepage' },
   'GET /alias': { view: 'pages/homepage' },
-  'GET /portfolio': 'RedirectController.portfolio'
-  'GET /tutorials': { view: 'pages/tutorials' },
-  'GET /product': { view: 'pages/product' },
-  'GET /cart': { view: 'pages/cart' },
-  'GET /api/tutorials': 'TutorialsController.getTutorials'
+  '/tutorials': { view: 'pages/tutorials' },
+  '/product': { view: 'pages/product' },
+  '/cart': { view: 'pages/cart'},
+  'GET /api/tutorials': 'TutorialsController.getTutorials',
+  'GET /peta-Portfolio': 'RedirectController.peta',
+  'GET /kat-Portfolio': 'RedirectController.kat',
+  'GET /sasha-Portfolio': 'RedirectController.sasha',
 
   'GET /product/:pid': {
     controller: 'ProductController',
