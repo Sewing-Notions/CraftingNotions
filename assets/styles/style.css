@@ -154,12 +154,6 @@ h2 {
   margin-left: 5px;
 }
 
-.cart-content {
-  padding: 20px;
-  max-width: 1200px;
-  margin: auto;
-}
-
 @media (max-width: 768px) {
   .nav-container {
     display: grid;

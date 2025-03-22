@@ -1,6 +1,6 @@
 module.exports = {
   peta: function(req, res) {
-    return res.redirect('http://www.xlyns.ddns.net/');
+    return res.redirect('https://xlyns.ddns.net/');
   },
   kat: function(req, res) {
     return res.redirect('http://kwest.hopto.org/');

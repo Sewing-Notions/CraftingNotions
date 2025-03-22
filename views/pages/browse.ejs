@@ -10,12 +10,46 @@
             <legend>Search</legend>
             <input type="text" id="search" name="search">
             <legend>Filters</legend>
-            <p>Pattern Size</p>
-            <select id="filter">
-              <option value="all">All</option>
-              <option value="small">Small Patterns</option>
-              <option value="big">Big Patterns</option>
+            <p>Category</p>
+            <select id="category-filter">
+              <option value="all">All Categories</option>
+              <option value="fabric">Fabric</option>
+              <option value="yarn-threads">Threads & Yarn</option>
+              <option value="beads-diy">Beads & DIY Kits</option>
+              <option value="felt-goods">Felt & Crafting Goods</option>
             </select>
+            <div id="size-filter-container" style="display:none;">
+              <p>Pattern Size</p>
+              <select id="size-filter">
+                <option value="all">All Sizes</option>
+                <option value="small">Small Patterns</option>
+                <option value="big">Big Patterns</option>
+              </select>
+            </div>
+            <div id="type-filter-container" style="display:none;">
+              <p>Type</p>
+              <select id="type-filter">
+                <option value="all">All</option>
+                <option value="yarn">Yarn</option>
+                <option value="threads">Threads</option>
+              </select>
+            </div>
+            <div id="beads-diy-container" style="display:none;">
+              <p>Type</p>
+              <select id="beads-diy-filter">
+                <option value="all">All</option>
+                <option value="beads">Beads</option>
+                <option value="diy">DIY Kits</option>
+              </select>
+            </div>
+            <div id="felt-goods-container" style="display:none;">
+              <p>Type</p>
+              <select id="felt-goods-filter">
+                <option value="all">All</option>
+                <option value="felt">Felt</option>
+                <option value="goods">Goods For Crafting</option>
+              </select>
+            </div>
           </fieldset>
         </form>
       </div>
@@ -30,22 +64,84 @@
 </div>
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    const filterDropdown = document.getElementById("filter");
     const filterSearch = document.getElementById("search");
+    const categoryFilterDropdown = document.getElementById("category-filter");
+    const sizeFilterDropdown = document.getElementById("size-filter");
+    const typeFilterDropdown = document.getElementById("type-filter");
+    const beadsDiyFilterDropdown = document.getElementById("beads-diy-filter");
+    const feltGoodsFilterDropdown = document.getElementById("felt-goods-filter");
+    const sizeFilterContainer = document.getElementById("size-filter-container");
+    const typeFilterContainer = document.getElementById("type-filter-container");
+    const beadsDiyContainer = document.getElementById("beads-diy-container");
+    const feltGoodsContainer = document.getElementById("felt-goods-container");
 
-    const filter = new URLSearchParams(window.location.search);
-    filterDropdown.value = filter.get("size") || "all";
-    filterSearch.value = filter.get("search") || "";
-    
-    filterDropdown.addEventListener("change", function() {
-      const selectedSize = filterDropdown.value;
-      if (selectedSize === "all") {
-        
-        window.location = window.location.href.split("?")[0];
-      } else {
-        var url = window.location.href.split("?")[0];
-        window.location = url + "?size=" + filterDropdown.value;
+    const urlParams = new URLSearchParams(window.location.search);
+
+    filterSearch.value = urlParams.get("search") || "";
+    categoryFilterDropdown.value = urlParams.get("category") || "all";
+    sizeFilterDropdown.value = urlParams.get("size") || "all";
+    typeFilterDropdown.value = urlParams.get("type") || "all";
+    beadsDiyFilterDropdown.value = urlParams.get("type") || "all";
+    feltGoodsFilterDropdown.value = urlParams.get("type") || "all";
+
+    function toggleFilters() {
+      const selectedCategory = categoryFilterDropdown.value;
+
+      sizeFilterContainer.style.display = "none";  // Default: Hide size filter
+      typeFilterContainer.style.display = "none";  // Default: Hide type filter
+      beadsDiyContainer.style.display = "none";    // Default: Hide beads/DIY filter
+      feltGoodsContainer.style.display = "none";   // Default: Hide felt/goods filter
+
+      if (selectedCategory === "fabric") {
+        sizeFilterContainer.style.display = "block";  // Show pattern size filter
+      } else if (selectedCategory === "yarn-threads") {
+        typeFilterContainer.style.display = "block";  // Show yarn/threads size filter
+      } else if (selectedCategory === "beads-diy") {
+        beadsDiyContainer.style.display = "block";  // Show beads/DIY kits filter
+      } else if (selectedCategory === "felt-goods") {
+        feltGoodsContainer.style.display = "block";  // Show felt/goods filter
       }
+    };
+    
+    categoryFilterDropdown.addEventListener("change", function () {
+      toggleFilters();
+      applyFilters();
     });
+    sizeFilterDropdown.addEventListener("change", function () {
+      applyFilters();
+    });
+    typeFilterDropdown.addEventListener("change", function () {
+      applyFilters();
+    });
+    beadsDiyFilterDropdown.addEventListener("change", function () {
+      applyFilters();
+    });
+    feltGoodsFilterDropdown.addEventListener("change", function () {
+      applyFilters();
+    });
+    
+    function applyFilters() {
+      const selectedCategory = categoryFilterDropdown.value;
+      const selectedSize = sizeFilterDropdown.value;
+      const selectedType = selectedCategory === "beads-diy" ? beadsDiyFilterDropdown.value : (selectedCategory === "felt-goods" ?  feltGoodsFilterDropdown.value : typeFilterDropdown.value);
+      const currentUrl = window.location.href.split("?")[0]; 
+      let newUrl = `${currentUrl}?category=${selectedCategory}`;
+
+      if (selectedCategory === "yarn-threads" || selectedCategory === "beads-diy" || selectedCategory === "felt-goods") {
+        if (selectedType !== "all") {
+          newUrl += `&type=${selectedType}`;
+        }
+      } else if (selectedCategory === "fabric") {
+        if (selectedSize !== "all") {
+          newUrl += `&size=${selectedSize}`;
+        }
+      }
+      
+      const searchTerm = new URLSearchParams(window.location.search).get("search");
+      if (searchTerm) newUrl += `&search=${searchTerm}`;
+      window.location.href = newUrl; 
+    }
+
+    toggleFilters();
   })
 </script>
