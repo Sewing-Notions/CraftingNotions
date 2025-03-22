@@ -24,7 +24,7 @@ module.exports = {
             obj.forEach(function(prod) { 
                 if (prod.pid == req.param('pid')) {
                     pName = prod.pName; 
-                    pPurchase = `$${prod.price}<br><button class="btn-toCart" onclick="quickAddToCart(${prod.pid})">Add to Cart</button>`;
+                    pPurchase = `$${prod.price}<br><button class="btn-toCart" onclick="quickAddToCart('${prod.pid}')">Add to Cart</button>`;
                     pInfo = `${prod.description}`;
                     pImg += `<img src="${prod.image}" alt="${prod.pName}">`;
                 }
@@ -42,10 +42,24 @@ module.exports = {
                 res.json({err: err});
             }
             console.dir(obj);
-            var prods = ``;
+            var prods = ``;             
+
+            const searchTerm = req.param('search') || '';
+            const categoryFilter = req.param('category') || 'all';  
+            const sizeFilter = req.param('size') || 'all';
+            const typeFilter = req.param('type') || 'all';  
 
             obj.forEach(function(prod) {
-                if (req.param('size') === prod.size || req.param('size') == undefined) {
+                const matchesSearch = prod.pName.toLowerCase().includes(searchTerm.toLowerCase()) || prod.description.toLowerCase().includes(searchTerm.toLowerCase());
+                const matchesCategory = categoryFilter === 'all' || prod.category === categoryFilter;
+                const matchesType = (categoryFilter === "yarn-threads" || categoryFilter === "beads-diy" || categoryFilter === "felt-goods") ?
+                                    (typeFilter === 'all' || prod.type === typeFilter) :
+                                    true;
+                const matchesFabricSize = (categoryFilter === 'fabric') ? 
+                                        (sizeFilter === 'all' || prod.size === sizeFilter) :
+                                        true;
+
+                if (matchesSearch && matchesCategory && matchesType && matchesFabricSize ) {
                     prods += `
                     <div class="product-card">
                     <h2>${prod.pName}</h2>
@@ -53,8 +67,8 @@ module.exports = {
                     <p>${prod.description}</p>
                     <p>Price: $${prod.price}</p>
                     <button onclick="location.href='/product/${prod.pid}'">View Details</button>
-                    <button onclick="quickAddToCart(${prod.pid})">Add to Cart</button>
-                    </div>`;
+                    <button onclick="quickAddToCart('${prod.pid}')">Add to Cart</button>
+                    </div>`;                   
                 }
             });
 

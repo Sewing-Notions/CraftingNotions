@@ -6,6 +6,7 @@
         "description": "Soft cotton fabric with small floral pattern",
         "size": "small",
         "category": "fabric",
+        "category1": "fabric",
         "image": "https://www.midlandtextiles.co.uk/cdn/shop/files/57_d0edcda3-f31f-4110-916e-09bc4b4504d6.jpg?v=1739188055&width=1024"
     },
     {
@@ -15,6 +16,7 @@
         "description": "Durable polyester fabric with small geometric pattern",
         "size": "small",
         "category": "fabric",
+        "category1": "fabric",
         "image": "https://www.totofabrics.com/cdn/shop/products/IMG_4227_600x600_721f4d34-c006-489d-902f-6e5a5fa36483_large.JPG?v=1548303350"
     },
     {
@@ -24,6 +26,7 @@
         "description": "Premium silk fabric with small dots pattern",
         "size": "small",
         "category": "fabric",
+        "category1": "fabric",
         "image": "https://rexfabrics.us/cdn/shop/products/3110_large.jpg?v=1671077003"
     },
     {
@@ -33,6 +36,7 @@
         "description": "Soft fabric with thin striped pattern",
         "size": "small",
         "category": "fabric",
+        "category1": "fabric",
         "image": "https://www.stylerevolutionary.com/wp-content/uploads/2023/03/small-stripe-sky-indigo-indoor-outdoor-alex-conroy-style-revolutionary-scaled.jpg"
     },
     {
@@ -42,6 +46,7 @@
         "description": "Artistic abstract fabric with soft texture",
         "size": "small",
         "category": "fabric",
+        "category1": "fabric",
         "image": "https://truettdesigns.com/cdn/shop/files/geometric-navy-and-sage-small-repeat-fabric-truett-designs-2-32415528616192.jpg?v=1706220762"
     },
     {
@@ -51,6 +56,7 @@
         "description": "Soft cotton fabric with large floral pattern",
         "size": "big",
         "category": "fabric",
+        "category1": "fabric",
         "image": "https://cdn11.bigcommerce.com/s-2e6e1/images/stencil/1280x1280/products/21544/38382/Fabric_24099__33327.1655505727.jpg?c=2"
     },
     {
@@ -60,6 +66,7 @@
         "description": "Durable polyester fabric with large geometric pattern",
         "size": "big",
         "category": "fabric",
+        "category1": "fabric",
         "image": "https://www.totofabrics.com/cdn/shop/products/compass_onyx_grande.jpg?v=1533195011"
     },
     {
@@ -69,6 +76,7 @@
         "description": "Premium silk fabric with big dots pattern",
         "size": "big",
         "category": "fabric",
+        "category1": "fabric",
         "image": "https://i.etsystatic.com/36896877/r/il/81a210/4101302914/il_300x300.4101302914_j6af.jpg"
     },
     {
@@ -78,6 +86,7 @@
         "description": "Soft fabric with wide striped pattern",
         "size": "big",
         "category": "fabric",
+        "category1": "fabric",
         "image": "https://corefabricstore.com/cdn/shop/files/F-COT195-Wide-Stripe-Recycled-Cotton-Black-and-Cream-Core-Fabrics-fold_2048x.jpg?v=1694189124"
     },
     {
@@ -87,6 +96,277 @@
         "description": "Artistic abstract fabric with large shapes",
         "size": "big",
         "category": "fabric",
+        "category1": "fabric",
         "image": "https://i.etsystatic.com/34695701/r/il/c58a8b/4103067362/il_570xN.4103067362_8gdn.jpg"
-    }
+    },
+    {
+        "pid": "0000000011",
+        "pName": "Cotton Yarn",
+        "price": "5.00",
+        "description": "Soft, 100% cotton yarn in vibrant colors",
+        "type": "yarn",
+        "category": "yarn-threads",
+        "image": "https://m.media-amazon.com/images/I/714gPecp99L._AC_UF894,1000_QL80_.jpg"
+    },
+    {
+        "pid": "0000000012",
+        "pName": "Wool Yarn",
+        "price": "7.50",
+        "description": "High-quality wool yarn for cozy projects",
+        "type": "yarn",
+        "category": "yarn-threads",
+        "image": "https://d2tk9av7ph0ga6.cloudfront.net/image/catalog/2020/8/cosy-700xauto.jpg"
+    },
+    {
+        "pid": "0000000013",
+        "pName": "Acrylic Yarn",
+        "price": "4.50",
+        "description": "Affordable and versatile acrylic yarn for all types of crafts",
+        "type": "yarn",
+        "category": "yarn-threads",
+        "image": "https://m.media-amazon.com/images/I/81ojxqSBLFL._AC_UF894,1000_QL80_.jpg"
+    },
+    {
+        "pid": "0000000014",
+        "pName": "Silk Yarn",
+        "price": "12.00",
+        "description": "Luxurious silk yarn perfect for delicate projects",
+        "type": "yarn",
+        "category": "yarn-threads",
+        "image": "https://m.media-amazon.com/images/I/81KbCsPTIfL._AC_UF894,1000_QL80_.jpg"
+    },
+    {
+        "pid": "0000000015",
+        "pName": "Alpaca Yarn",
+        "price": "10.00",
+        "description": "Soft and warm alpaca yarn for winter projects",
+        "type": "yarn",
+        "category": "yarn-threads",
+        "image": "https://i.etsystatic.com/18308396/r/il/fe9367/4764785346/il_570xN.4764785346_qwe5.jpg"
+    },
+    {
+        "pid": "0000000016",
+        "pName": "Embroidery Thread",
+        "price": "3.00",
+        "description": "High-quality embroidery thread in a variety of colors",
+        "type": "threads",
+        "category": "yarn-threads",
+        "image": "https://m.media-amazon.com/images/I/81Xa1u9TXwL._AC_UF894,1000_QL80_.jpg"
+    },
+    {
+        "pid": "0000000017",
+        "pName": "Sewing Thread",
+        "price": "2.50",
+        "description": "Strong and durable thread for sewing garments",
+        "type": "threads",
+        "category": "yarn-threads",
+        "image": "https://ae01.alicdn.com/kf/Sda153033dc9f4d80a0c5a51d88c7cdd86.jpg"
+    },
+    {
+        "pid": "0000000018",
+        "pName": "Cotton Thread",
+        "price": "3.20",
+        "description": "Soft cotton thread ideal for hand sewing",
+        "type": "threads",
+        "category": "yarn-threads",
+        "image": "https://m.media-amazon.com/images/I/61lXv9rxCqL._AC_UF350,350_QL80_.jpg"
+    },
+    {
+        "pid": "0000000019",
+        "pName": "Polyester Thread",
+        "price": "2.00",
+        "description": "Affordable and strong polyester thread for all types of fabrics",
+        "type": "threads",
+        "category": "yarn-threads",
+        "image": "https://m.media-amazon.com/images/I/71OuTddKfYL._AC_UF894,1000_QL80_.jpg"
+    },
+    {
+        "pid": "0000000020",
+        "pName": "Nylon Thread",
+        "price": "4.00",
+        "description": "Durable nylon thread for heavy-duty sewing",
+        "type": "threads",
+        "category": "yarn-threads",
+        "image": "https://cdn11.bigcommerce.com/s-e77e4/images/stencil/original/products/6666/43180/Bonded_Nylon_66_Thread_26_Colors_Buckleguy__13424.1684434077.JPG?c=2"
+    },
+    {
+        "pid": "0000000021",
+        "pName": "Glass Seed Beads Set",
+        "price": "12.99",
+        "description": "A collection of vibrant glass seed beads for jewelry making and crafts",
+        "type": "beads",
+        "category": "beads-diy",
+        "image": "https://m.media-amazon.com/images/I/91erKTpYXWL.jpg"
+    },
+    {
+        "pid": "0000000022",
+        "pName": "Crystal Beads Assortment",
+        "price": "15.50",
+        "description": "Premium crystal beads for making elegant jewelry and accessories",
+        "type": "beads",
+        "category": "beads-diy",
+        "image": "https://m.media-amazon.com/images/I/91jbQPIhueL.jpg"
+    },
+    {
+        "pid": "0000000023",
+        "pName": "Wooden Beads for Crafts",
+        "price": "9.99",
+        "description": "Natural wooden beads, perfect for DIY projects and handmade gifts",
+        "type": "beads",
+        "category": "beads-diy",
+        "image": "https://m.media-amazon.com/images/I/91+ZQBsjS3L.jpg"
+    },
+    {
+        "pid": "0000000024",
+        "pName": "Pearl Beads Collection",
+        "price": "18.75",
+        "description": "A variety of pearl beads for crafting elegant designs and accessories",
+        "type": "beads",
+        "category": "beads-diy",
+        "image": "https://m.media-amazon.com/images/I/71+rwY8NrzL.jpg"
+    },
+    {
+        "pid": "0000000025",
+        "pName": "Acrylic Beads Mix",
+        "price": "7.49",
+        "description": "Colorful acrylic beads suitable for kids' crafts and DIY accessories",
+        "type": "beads",
+        "category": "beads-diy",
+        "image": "https://m.media-amazon.com/images/I/91m6VMnkmVL._AC_UF894,1000_QL80_.jpg"
+    },
+    {
+        "pid": "0000000026",
+        "pName": "DIY Jewelry Making Kit",
+        "price": "22.99",
+        "description": "Complete set with beads, strings, and tools for jewelry making",
+        "type": "diy",
+        "category": "beads-diy",
+        "image": "https://m.media-amazon.com/images/I/81m1smnxQzS.jpg"
+    },
+    {
+        "pid": "0000000027",
+        "pName": "Embroidery Starter Kit",
+        "price": "19.99",
+        "description": "A beginner-friendly kit with fabric, needles, and colorful threads",
+        "type": "diy",
+        "category": "beads-diy",
+        "image": "https://m.media-amazon.com/images/I/71trO6KjZIL._AC_UF894,1000_QL80_.jpg"
+    },
+    {
+        "pid": "0000000028",
+        "pName": "Candle Making Kit",
+        "price": "29.95",
+        "description": "Everything needed to create beautiful scented candles at home",
+        "type": "diy",
+        "category": "beads-diy",
+        "image": "https://i.etsystatic.com/24293148/r/il/b973e4/6707494739/il_1588xN.6707494739_3qxj.jpg"
+    },
+    {
+        "pid": "0000000029",
+        "pName": "Resin Art Kit",
+        "price": "34.99",
+        "description": "A high-quality resin kit with pigments and molds for creative projects",
+        "type": "diy",
+        "category": "beads-diy",
+        "image": "https://m.media-amazon.com/images/I/711Elj8LadL._AC_UF894,1000_QL80_.jpg"
+    },
+    {
+        "pid": "0000000030",
+        "pName": "Soap Making Kit",
+        "price": "24.50",
+        "description": "DIY soap kit with essential oils, molds, and natural ingredients",
+        "type": "diy",
+        "category": "beads-diy",
+        "image": "https://m.media-amazon.com/images/I/91CgDnHnlYL.jpg"
+    },
+    {
+        "pid": "0000000031",
+        "pName": "Red Felt Sheets",
+        "price": "5.99",
+        "description": "Bright red felt sheets for crafting, quilting, and sewing projects",
+        "type": "felt",
+        "category": "felt-goods",
+        "image": "https://m.media-amazon.com/images/I/61isJ23EgqL._AC_UF894,1000_QL80_.jpg"
+    },
+    {
+        "pid": "0000000032",
+        "pName": "Blue Felt Sheets",
+        "price": "5.99",
+        "description": "Soft and smooth blue felt sheets, ideal for DIY crafts and decorations",
+        "type": "felt",
+        "category": "felt-goods",
+        "image": "https://m.media-amazon.com/images/I/81GHcRdXYGL._AC_UF1000,1000_QL80_.jpg"
+    },
+    {
+        "pid": "0000000033",
+        "pName": "Green Felt Sheets",
+        "price": "5.99",
+        "description": "Green felt sheets perfect for making holiday decorations, flowers, and more",
+        "type": "felt",
+        "category": "felt-goods",
+        "image": "https://m.media-amazon.com/images/I/81W+Nc4u8VL._AC_UF1000,1000_QL80_.jpg"
+    },
+    {
+        "pid": "0000000034",
+        "pName": "Yellow Felt Sheets",
+        "price": "5.99",
+        "description": "Vibrant yellow felt sheets suitable for scrapbooking, sewing, and various craft projects",
+        "type": "felt",
+        "category": "felt-goods",
+        "image": "https://m.media-amazon.com/images/I/61Ag47ZElVL.jpg"
+    },
+    {
+        "pid": "0000000035",
+        "pName": "Black Felt Sheets",
+        "price": "5.99",
+        "description": "High-quality black felt sheets for crafts, school projects, and art work",
+        "type": "felt",
+        "category": "felt-goods",
+        "image": "https://m.media-amazon.com/images/I/815BkqhCj1L._AC_UF1000,1000_QL80_.jpg"
+    },
+    {
+        "pid": "0000000036",
+        "pName": "Crochet Hook Set",
+        "price": "12.99",
+        "description": "A complete set of crochet hooks in various sizes for all your crocheting needs. Ideal for beginners and professionals",
+        "type": "goods",
+        "category": "felt-goods",
+        "image": "https://m.media-amazon.com/images/I/71KAh3bqsfL.jpg"
+    },
+    {
+        "pid": "0000000037",
+        "pName": "Knitting Needles Set",
+        "price": "9.99",
+        "description": "A set of high-quality knitting needles, perfect for knitting scarves, blankets, and other projects. Includes various sizes",
+        "type": "goods",
+        "category": "felt-goods",
+        "image": "https://m.media-amazon.com/images/I/81A+Qx1mWfL._AC_UF894,1000_QL80_.jpg"
+    },
+    {
+        "pid": "0000000038",
+        "pName": "Yarn Storage Basket",
+        "price": "15.99",
+        "description": "A stylish and functional yarn storage basket to keep your knitting and crocheting materials organized",
+        "type": "goods",
+        "category": "felt-goods",
+        "image": "https://m.media-amazon.com/images/I/711z1c+qjNL._AC_UF894,1000_QL80_.jpg"
+    },
+    {
+        "pid": "0000000039",
+        "pName": "Fabric Scissors",
+        "price": "8.99",
+        "description": "Sharp, ergonomic fabric scissors designed for precision cutting of fabric, thread, and yarn",
+        "type": "goods",
+        "category": "felt-goods",
+        "image": "https://m.media-amazon.com/images/I/614W5gZoE-L._AC_UF894,1000_QL80_.jpg"
+    },
+    {
+        "pid": "0000000040",
+        "pName": "Sewing Kit",
+        "price": "11.99",
+        "description": "A complete sewing kit with needles, threads, scissors, and accessories. Perfect for small repairs and projects",
+        "type": "goods",
+        "category": "felt-goods",
+        "image": "https://ae01.alicdn.com/kf/Hab1383557a4249f9966f31948e65deb7J.jpg"
+    }    
 ]
