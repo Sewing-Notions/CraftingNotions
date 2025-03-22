@@ -37,6 +37,19 @@ function quickAddToCart(productId) {
             }
         })
 }
+// Function to remove a product from the cart 
+
+function removeFromCart(index) {
+    let cart = JSON.parse(sessionStorage.getItem('cart')) || [];
+    if (index > -1 && index < cart.length) {
+        cart.splice(index, 1);
+        sessionStorage.setItem('cart', JSON.stringify(cart));
+        console.log("removed from cart");
+        location.reload();
+    } else {
+        console.log("Invalid index");
+    }
+}
 
 // Function to display the selected product information
 function displayCart() {
@@ -44,7 +57,7 @@ function displayCart() {
         const cartContent = JSON.parse(sessionStorage.getItem('cart'));
         personInfoDiv.innerHTML = ``;
 
-        cartContent.forEach(item => {
+        cartContent.forEach((item, index) => {
             if (item != null) {
                 personInfoDiv.innerHTML += `
                 <div class="product-card">
@@ -53,6 +66,7 @@ function displayCart() {
                     <p>Description: ${item.description}</p>
                     <img src="${item.image}" alt="Product Image">
                     <p>PID: ${item.pid}</p>
+                    <button onclick="removeFromCart(${index})">Remove</button>
                 </div>
                 `
             }

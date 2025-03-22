@@ -40,6 +40,7 @@
     filterDropdown.addEventListener("change", function() {
       const selectedSize = filterDropdown.value;
       if (selectedSize === "all") {
+        
         window.location = window.location.href.split("?")[0];
       } else {
         var url = window.location.href.split("?")[0];
