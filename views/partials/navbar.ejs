@@ -7,11 +7,17 @@
 %-->
 
 <div class="navigation">
-    <div class="nav-container">
-      <div> <a href="/">Homepage</a></div>
-      <div> Shop <img src=".\images\down-arrow-backup-2-svgrepo-com.svg"></div>
-      <div> Shop <img src=".\images\down-arrow-backup-2-svgrepo-com.svg"></div>
-      <div> Shop <img src=".\images\down-arrow-backup-2-svgrepo-com.svg"></div>
-      <div> <a href="/tutorials">Tutorials</a></div>
-    </div>
+  <div class="nav-container">
+    <div> <a href="/products?category=felt-goods">Felt & Crafting Goods<img src="..\images\down-arrow-backup-2-svgrepo-com.svg"></a></div>
+    <div> <a href="/products?category=beads-diy">Beads & DIY kits<img src="..\images\down-arrow-backup-2-svgrepo-com.svg"></a></div>
+    <div> <a href="/products?category=yarn-threads">Yarn & Threads<img src="..\images\down-arrow-backup-2-svgrepo-com.svg"></a></div>
+    <div> <a href="/products?category=fabric">Fabric<img src="..\images\down-arrow-backup-2-svgrepo-com.svg"></a></div>
+    <div> <a href="/tutorials">Tutorials</a></div>
+    <div> <a href="/cart">Cart</a></div>
   </div>
+</div>
+<script>
+  function shopNow(category) {
+    window.location.href = `/products?category=${category}`;
+}
+</script>

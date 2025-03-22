@@ -1,0 +1,19 @@
+<div class="container-fluid body">
+    <%- partial('../partials/header') %>
+    <%- partial('../partials/navbar') %>
+    <div class="cart-content">
+        <h1>Cart</h1>
+        <br> Item
+        <div id="product-info"></div>
+        <input type="text" id="fname0" placeholder="Small Geometric Fabric">
+        <button onclick="addToCart()">Submit</button>
+        <div class="products-container" id="person-info"></div>
+    </div>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        displayCart();
+    })
+
+    </script>
+</div>

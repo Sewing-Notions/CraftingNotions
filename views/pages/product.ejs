@@ -1,0 +1,37 @@
+<div class="container-fluid body">
+  <%- partial('../partials/header') %>
+  <%- partial('../partials/navbar') %>
+
+  <div class="web-body">
+    <div class="container-product">
+      <div class="product-img">
+        <%- productImage %>
+      </div>
+      <div class="product-info">
+        <p id="product-name"><%= productName %></p>
+        <p><%- productInfo %></p>
+        <div><%- purchase %></div>
+
+        <div class="product-choices">
+
+        </div>
+      </div>
+    </div>
+    <div class="container-product-info">
+      <div class="prod-more-info"> 
+        <p>Further Product Details</p>
+        <div class="prod-info">
+          <p>
+            <%- productInfo %>
+          </p>
+        </div>
+      </div>
+      <div class="prod-proj">
+        <p>Product Projects</p>
+        <div class="proj-choices">
+        </div>
+      </div>
+    </div>
+  </div>
+  <%- partial('../partials/footer') %>
+</div>

@@ -16,6 +16,7 @@ module.exports = {
           key: YOUTUBE_API_KEY
         }
       });
+
       let wordpressSites = [];
       if (category === 'crochet') {
         wordpressSites = [

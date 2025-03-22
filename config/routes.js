@@ -21,9 +21,11 @@ module.exports.routes = {
 
   '/': { view: 'pages/homepage' },
   '/tutorials': { view: 'pages/tutorials' },
-  '/products': {view: 'pages/products'},
-   'GET /api/tutorials': 'TutorialsController.getTutorials',
-   
+  '/product': { view: 'pages/product' },
+  '/cart': { view: 'pages/cart'},
+  'GET /api/tutorials': 'TutorialsController.getTutorials',
+  'GET /product/:pid': { controller: 'ProductController', action: 'getProduct' },
+  
   /***************************************************************************
   *                                                                          *
   * More custom routes here...                                               *
@@ -35,6 +37,14 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-
+  'get /product/:pid': {
+    controller: 'ProductController',
+    action: 'getProduct',
+    skipAssets: true
+  },
+  'get /products/': {
+    controller: 'ProductController',
+    action: 'getProducts',
+    skipAssets: true
+  }
 };
-
