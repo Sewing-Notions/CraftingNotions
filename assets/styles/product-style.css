@@ -33,9 +33,6 @@
   aspect-ratio: 1/1;
   object-fit: cover;
 }
-#browse-filters {
-  padding: 25px;
-}
 .btn-toCart {
   background-color: #e65c50;  
   color: white;
@@ -44,6 +41,12 @@
   margin-top: 10px;
   border-radius: 5px;
   cursor: pointer;
+}
+#search {
+  width: 100%;
+}
+.tmp {
+  width: 100%;
 }
 
 .body {
